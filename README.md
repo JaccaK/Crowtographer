@@ -42,4 +42,4 @@ Step 4 Add input files (either by button, or drag and drop).
 Step 5 Near the top click the single gear shaped button labled "Pack"
 
 ### How to share map data
-All data entered into the map is stored in a folder in the directly called "mapdata" as text when saved. Simply share that folder and others may overwrite their own and view it, if they have the same maps.atlas file.
+All data entered into the map is stored in a folder in the directory called "mapdata" as text when saved. Simply share that folder and others may overwrite their own and view it, if they have the same maps.atlas file.
