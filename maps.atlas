@@ -1,0 +1,55 @@
+
+maps.png
+size: 2048, 1024
+format: RGBA8888
+filter: Nearest, Nearest
+repeat: none
+DHathos
+  rotate: false
+  xy: 644, 2
+  size: 640, 640
+  orig: 640, 640
+  offset: 0, 0
+  index: -1
+Avison
+  rotate: false
+  xy: 644, 2
+  size: 640, 640
+  orig: 640, 640
+  offset: 0, 0
+  index: -1
+Moosename
+  rotate: false
+  xy: 644, 2
+  size: 640, 640
+  orig: 640, 640
+  offset: 0, 0
+  index: -1
+Sky_Point
+  rotate: false
+  xy: 1286, 2
+  size: 640, 640
+  orig: 640, 640
+  offset: 0, 0
+  index: -1
+Yerog
+  rotate: false
+  xy: 2, 2
+  size: 640, 640
+  orig: 640, 640
+  offset: 0, 0
+  index: -1
+Solaris
+  rotate: false
+  xy: 2, 2
+  size: 640, 640
+  orig: 640, 640
+  offset: 0, 0
+  index: -1
+Tiggs_Town
+  rotate: false
+  xy: 2, 2
+  size: 640, 640
+  orig: 640, 640
+  offset: 0, 0
+  index: -1
