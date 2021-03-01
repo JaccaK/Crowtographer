@@ -10,6 +10,8 @@ If you're using the JAR, just make sure the maps.png and maps.atlas file are in 
 
 Once open, the maps will be automatically loaded. Clicking on a coordinate button will allow you to save text to it using the text area on the right, which can be searched with the searchbar on the bottom. Searching with the searchbar tints all coordinates not including the query or cursor. Pressing a map swap button will swap to a different map. Once you have data you can click the save button in the top left and the information on each coordinate will be there on next launch.
 
+Don't forget to press the save button after storing data. Save often.
+
 
 ### How to create maps
 The tools you'll need are [CrashInvader's GDX Texture Packer GUI](https://github.com/crashinvaders/gdx-texture-packer-gui) and [Tiled](https://www.mapeditor.org/).
