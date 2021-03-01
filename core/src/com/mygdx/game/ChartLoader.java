@@ -80,7 +80,7 @@ public final class ChartLoader {
                     map.get(name).put(CoordinateButton.
                                     COORD_ALPHABET[count / 39]
                                     + (count % 39 + 1),
-                            line.replaceFirst(String.valueOf(NEW_LINE), "\n"));
+                            line.replace(String.valueOf(NEW_LINE), "\n"));
                     count++;
                 }
             } else {

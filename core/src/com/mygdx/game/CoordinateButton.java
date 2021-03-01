@@ -102,7 +102,8 @@ public class CoordinateButton extends ImageButton implements ActorObserver {
         if (mySearchBar == null
                 || myUIData == null
                 || myUIData.getCurrentCoordinates().
-                get(myCoordinate).contains(mySearchBar.getText())
+                get(myCoordinate).toLowerCase().
+                contains(mySearchBar.getText().toLowerCase())
                 || mySearchBar.getText().isEmpty()
                 || myCoordinate.matches(fixRegex(mySearchBar.getText()))
                 || myCoordinate.equals(myUIData.getCurrentCoordinate())) {
