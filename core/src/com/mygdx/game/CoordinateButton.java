@@ -104,9 +104,20 @@ public class CoordinateButton extends ImageButton implements ActorObserver {
                 || myUIData.getCurrentCoordinates().
                 get(myCoordinate).contains(mySearchBar.getText())
                 || mySearchBar.getText().isEmpty()
-                || myCoordinate.matches(mySearchBar.getText())
+                || myCoordinate.matches(fixRegex(mySearchBar.getText()))
                 || myCoordinate.equals(myUIData.getCurrentCoordinate())) {
             setColor(0, 0, 0, 0);
         }
+    }
+
+    /**
+     * Fixes the input for finding a specific coord. Avoids a crash.
+     * @param theString The string to parse.
+     * @return A string without Pattern errors.
+     */
+    private String fixRegex(final String theString){
+        String fix = theString.replace("\\","\\\\");
+        fix = fix.replace("[", "\\[");
+        return fix;
     }
 }
