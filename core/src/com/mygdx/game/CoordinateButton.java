@@ -99,26 +99,46 @@ public class CoordinateButton extends ImageButton implements ActorObserver {
     @Override
     public void update() {
         setColor(0, 0, 0,  0.8F);
-        if (mySearchBar == null
-                || myUIData == null
-                || myUIData.getCurrentCoordinates().
-                get(myCoordinate).toLowerCase().
-                contains(mySearchBar.getText().toLowerCase())
-                || mySearchBar.getText().isEmpty()
-                || myCoordinate.matches(fixRegex(mySearchBar.getText()))
-                || myCoordinate.equals(myUIData.getCurrentCoordinate())) {
+        if (searchConditions()) {
             setColor(0, 0, 0, 0);
         }
     }
 
+
     /**
-     * Fixes the input for finding a specific coord. Avoids a crash.
-     * @param theString The string to parse.
-     * @return A string without Pattern errors.
+     * The search conditions for coordinate fading.
+     * @return true if the conditions are met.
      */
-    private String fixRegex(final String theString){
-        String fix = theString.replace("\\","\\\\");
-        fix = fix.replace("[", "\\[");
-        return fix;
+    private boolean searchConditions(){
+        boolean truth = mySearchBar == null
+                || myUIData == null
+                || mySearchBar.getText().isEmpty()
+                || myCoordinate.equals(myUIData.getCurrentCoordinate());
+        try{
+           truth =  truth || multiLineSearch()
+                    || myCoordinate.matches(mySearchBar.getText());
+        } catch (Exception exception){
+            truth = myUIData.getCurrentCoordinates().
+                    get(myCoordinate).toLowerCase().
+                    contains(mySearchBar.getText().toLowerCase());
+        }
+        return truth;
+    }
+
+    /**
+     * Splits regex searching between every line on the notes area.
+     * @return If it finds a line containing the regex in the searchbar.
+     */
+    private boolean multiLineSearch(){
+        boolean truth = false;
+        try{
+            for(String line : myUIData.getCurrentCoordinates().
+                    get(myCoordinate).toLowerCase().split("\n")){
+                truth = truth || line.matches(mySearchBar.getText().toLowerCase());
+            }
+        }catch(Exception exception){
+            // Avoid Pattern Crash
+        }
+        return truth;
     }
 }
